@@ -14,6 +14,18 @@ function getTitle(title: string) {
 	return title;
 }
 
+const greetings = [
+	'Hello',
+	'Hi',
+	'Hey there',
+	'Good morning',
+	'Good afternoon',
+	'Good evening',
+	'Greetings',
+	'Howdy',
+	'Salutations',
+];
+
 function App() {
 	return (
 		// 1.0 Everything returned from a React component will be displayed in the browser
@@ -36,6 +48,11 @@ function App() {
 				id='search'
 				type='text'
 			/>
+			<ul>
+				{greetings.map((greeting, index) => (
+					<li key={index}>{greeting}</li>
+				))}
+			</ul>
 		</div>
 		// this output is called JSX (JavaScript XML)
 	);

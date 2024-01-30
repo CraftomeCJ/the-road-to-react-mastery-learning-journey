@@ -3,6 +3,15 @@ import * as React from 'react';
 // 2.0 The App component doesn’t have any parameters in its function signature
 // 2.1 Props are how information are passed from one component to another component.
 // 2.2 These props will be accessible via the function’s signature as parameters.
+
+// 5.2 do not want to re-define a variable within a function every time this function runs, we could define this variable outside of the component
+// 5.3 In this case, the title does not depend on any information that’s within the function component (e.g. parameters coming from the function’s signature), hence it’s okay to move it outside.
+// 5.4 Therefore it will be defined only once and not every time the function is called:
+const title = 'React';
+
+// As a rule of thumb:
+// If a variable does not need anything from within the function component’s body (e.g. parameters), then define it outside of the component which avoids re-defining it on every function call.
+
 function App() {
 	//1.0 A component has to start with a capital letter, otherwise it isn’t treated as component in React.
 	//1.2 the App component is commonly called a function component.
@@ -13,7 +22,7 @@ function App() {
 
 	//::: you can do something in between here :::
 	// 5.0 Variables defined in the function’s body will be re-defined each time this function runs
-	const title = 'React';
+	// const title = 'React';
 
 	return (
 		//3.0 the App component returns code that resembles HTML. It allows you to combine JavaScript and HTML for displaying highly dynamic and interactive content in a browser.

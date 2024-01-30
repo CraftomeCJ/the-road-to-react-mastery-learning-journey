@@ -1,38 +1,34 @@
 import * as React from 'react';
+// 2.0 Any time one of our files saves, the development server notices it and reloads all affected files for the browser.
 
-// 2.0 The App component doesn’t have any parameters in its function signature
-// 2.1 Props are how information are passed from one component to another component.
-// 2.2 These props will be accessible via the function’s signature as parameters.
+// 2.1 The bridge between React and the development server which makes this behavior possible is called React Fast Refresh
+// 2.2 prior to that it was React Hot Loader on React’s side and Hot Module Replacement on the development server’s side.
 
-// 5.2 do not want to re-define a variable within a function every time this function runs, we could define this variable outside of the component
-// 5.3 In this case, the title does not depend on any information that’s within the function component (e.g. parameters coming from the function’s signature), hence it’s okay to move it outside.
-// 5.4 Therefore it will be defined only once and not every time the function is called:
-const title = 'React';
-
-// As a rule of thumb:
-// If a variable does not need anything from within the function component’s body (e.g. parameters), then define it outside of the component which avoids re-defining it on every function call.
+const title = 'World';
 
 function App() {
-	//1.0 A component has to start with a capital letter, otherwise it isn’t treated as component in React.
-	//1.2 the App component is commonly called a function component.
-	//1.3 Function components are the modern way of using components in React, however, be aware that there are other variations of React components like component types
-
-	// 4.0 Like any other JavaScript function, a function component can have implementation details between the function signature and the return statement.
-	//The implementation details:
-
-	//::: you can do something in between here :::
-	// 5.0 Variables defined in the function’s body will be re-defined each time this function runs
-	// const title = 'React';
-
 	return (
-		//3.0 the App component returns code that resembles HTML. It allows you to combine JavaScript and HTML for displaying highly dynamic and interactive content in a browser.
+		// 1.0 Everything returned from a React component will be displayed in the browser
 		<div>
-			{/* 5.1 The function of a component runs every time a component is displayed in the browser.
-      This happens for the initial rendering (read: displaying) of the component,
-      but also whenever the component updates because it has to display something different due to changes (re-rendering).  */}
-			<h1>Hello World</h1>
+			<h1>Hello {title}</h1>
+			{/* For our input field and label combination,
+      we specified three HTML attributes: htmlFor, id, and type.
+      The type attribute is kinda mandatory and has nothing to do with focusing the input field when clicking the label.  */}
+			{/* The htmlFor reflects the for attribute in vanilla HTML.
+      JSX replaces a handful of internal HTML attributes caused by internal implementation details of React itself.
+      */}
+			{/* JSX is closer to JavaScript than to HTML, React uses the camelCase33 naming convention. */}
+			{/* Expect to come across more JSX-specific attributes like className and onClick instead of class and onclick */}
+
+			{/* When using HTML in JSX, React internally translates all HTML attributes to JavaScript where certain words such as class or for are reserved during the rendering process. Therefore React came up with replacements such as className and htmlFor for them.
+      However, once the actual HTML is rendered for the browser, the attributes get translated back to their native variant. */}
+			<label htmlFor='search'>Search: </label>
+			<input
+				id='search'
+				type='text'
+			/>
 		</div>
+		// this output is called JSX (JavaScript XML)
 	);
 }
-
 export default App;

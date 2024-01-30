@@ -1,16 +1,25 @@
+import { title } from 'process';
 import * as React from 'react';
 // 2.0 Any time one of our files saves, the development server notices it and reloads all affected files for the browser.
 
 // 2.1 The bridge between React and the development server which makes this behavior possible is called React Fast Refresh
 // 2.2 prior to that it was React Hot Loader on React’s side and Hot Module Replacement on the development server’s side.
 
-const title = 'World';
+const welcome = {
+	greeting: 'Hey',
+	country: 'SIngapore',
+};
+
+function getTitle(title: string) {
+	return title;
+}
 
 function App() {
 	return (
 		// 1.0 Everything returned from a React component will be displayed in the browser
 		<div>
-			<h1>Hello {title}</h1>
+			<h1>{`${welcome.greeting} Welcome to ${welcome.country}`}</h1>
+			<h1>{getTitle('Have a safe day.')}</h1>
 			{/* For our input field and label combination,
       we specified three HTML attributes: htmlFor, id, and type.
       The type attribute is kinda mandatory and has nothing to do with focusing the input field when clicking the label.  */}
@@ -32,3 +41,5 @@ function App() {
 	);
 }
 export default App;
+
+// Every JavaScript data structure, from primitive to complex, can be used within HTML with the help of JSX.

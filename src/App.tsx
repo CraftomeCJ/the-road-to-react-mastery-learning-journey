@@ -8,6 +8,11 @@ function App() {
 	//1.2 the App component is commonly called a function component.
 	//1.3 Function components are the modern way of using components in React, however, be aware that there are other variations of React components like component types
 
+	// 4.0 Like any other JavaScript function, a function component can have implementation details between the function signature and the return statement.
+	//The implementation details:
+
+	//::: you can do something in between here :::
+
 	return (
 		//3.0 the App component returns code that resembles HTML. It allows you to combine JavaScript and HTML for displaying highly dynamic and interactive content in a browser.
 		<div>
@@ -15,5 +20,5 @@ function App() {
 		</div>
 	);
 }
-// 4.0 Like any other JavaScript function, a function component can have implementation details between the function signature and the return statement.
+
 export default App;

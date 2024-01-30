@@ -12,11 +12,16 @@ function App() {
 	//The implementation details:
 
 	//::: you can do something in between here :::
+	// 5.0 Variables defined in the function’s body will be re-defined each time this function runs
+	const title = 'React';
 
 	return (
 		//3.0 the App component returns code that resembles HTML. It allows you to combine JavaScript and HTML for displaying highly dynamic and interactive content in a browser.
 		<div>
-			<h1>Hello React</h1>
+			{/* 5.1 The function of a component runs every time a component is displayed in the browser.
+      This happens for the initial rendering (read: displaying) of the component,
+      but also whenever the component updates because it has to display something different due to changes (re-rendering).  */}
+			<h1>Hello World</h1>
 		</div>
 	);
 }
